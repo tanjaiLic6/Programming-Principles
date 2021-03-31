@@ -13,6 +13,9 @@
 // < 90% B
 // < 100% A
 
+var students =[["david",58],["dany",80 ]];
+console.log(students[0][1]);
+
 
 var marks=[80,77,88,95,68];
 var average=0;//81.6
