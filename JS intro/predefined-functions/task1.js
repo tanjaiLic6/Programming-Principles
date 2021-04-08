@@ -3,26 +3,20 @@
 // Input: [&quot;1&quot;, &quot;21&quot;, undefined, &quot;42&quot;, &quot;1e+3&quot;, Infinity]
 // Output: [1, 21, 42, 1000]
 
+function filterNumbers(array) {
+  var newArray = [];
+  for (var i = 0;  i < array.length; i++) {
+    var converted = parseFloat(array[i]);
+    if (isFinite(converted)) {
+      newArray[newArray.length] = converted;
+     
+    }
+  }
 
-function filterNumbers(array){
-    var newArray=[];
-   for (var i=0, x=0; i<array.length; i++){
-           
-        if   ( isFinite(parseFloat(array[i]))){
-           
-            newArray[x]=parseFloat(array[i]);
-            x++;
-
-        }
-           
-           
-       }
-    
-
-   return newArray;
+  return newArray;
 }
 
-var result=filterNumbers(["1","21",undefined,"42","1e+3",Infinity,"1.2bla","0xf5"]);
+var result = filterNumbers(["1", "-2.1", undefined, "42", "1e+3", Infinity]);
 
 console.log(result);
 // zasto mi parseInt ne daje 1000 nego 1?? zato sto parseInt ne razume exponents

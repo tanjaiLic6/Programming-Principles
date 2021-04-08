@@ -7,7 +7,7 @@ function numOfFloat(array){
     var res=0;
     for(var i=0; i<array.length; i++){
      if(isNaN(parseFloat(array[i]))){
-         res+=0;
+        
      }
      else {
        if (parseInt(array[i])!==array[i]){ 
@@ -17,7 +17,7 @@ function numOfFloat(array){
     return res;
 }
 
-var array=[NaN,23.1,15,false,-22.5,"",4,7,null];
+var array=[NaN,23.1,15,false,-22.5,"",4,7,null,33.5];
 
 var result=numOfFloat(array);
 

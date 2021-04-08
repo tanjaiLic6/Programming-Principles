@@ -4,10 +4,11 @@
 
 function falsy(array){
     var newArray=[];
-    for(var i=0, x=0; i<array.length; i++){
-        if (!!array[i]===true){
-            newArray[x]=array[i];
-            x++;
+    for(var i=0; i<array.length; i++){
+         var n=parseFloat(array[i]);
+        if (n){
+            newArray[newArray.length]=array[i];
+            
         }
     }
     return newArray;
