@@ -4,7 +4,7 @@
 
 function palindrome(string){
     var result=false;
-    var space=" ";
+    // var space=" ";
     var blanks=0;
     var counter=0;
      for (var i=0,x=string.length-1; i<string.length;i++,x--){
