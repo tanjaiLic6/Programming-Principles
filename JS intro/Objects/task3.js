@@ -11,13 +11,13 @@ function createProject(projectName,descript,programingLang,gitRepo,IsDevelopment
         ProgramingLanguage:programingLang,
         GitRepository:gitRepo,
         Development:IsDevelopmentBool,
-        PrintProjectsRepo:function(){ return(project.GitRepository);},
+        PrintProjectsRepo:function(){ return project.GitRepository;},
         IsJavaScript:function(){
             var res="";
             if (project.ProgramingLanguage ==="JavaScript"){
-                 return res="true";
+                 return res=true;
             }
-            else  return res="false";
+            else  return res=false;
         },
         IsDevelopment:function(){
             if(project.Development==="Development"){
@@ -33,4 +33,5 @@ function createProject(projectName,descript,programingLang,gitRepo,IsDevelopment
 var newP=createProject("MySite","Create new site","JavaScript","Demo","Development");
 console.log(newP);
 
-console.log(newP.PrintProjectsRepo());
+console.log(newP.IsJavaScript());
+

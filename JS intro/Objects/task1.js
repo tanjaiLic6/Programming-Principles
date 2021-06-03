@@ -9,4 +9,4 @@ var favouriteCoffe={
 
 }
 
-console.log(favouriteCoffe["name"]);
+console.log(favouriteCoffe.name);

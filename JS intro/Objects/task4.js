@@ -48,3 +48,7 @@ console.log(myMeal.allIngredientsPrint());
 console.log(myMeal.changeCuisine("Serbian"));
 console.log(myMeal.deleteIngredient("jaja"));
 console.log(myMeal.timeprep());
+
+var pica=createRecipe("Pica","Italijanska",4,["testo","kecap","sir"],10,"ispeci");
+console.log(pica);
+console.log(myMeal.changeCuisine("Serbian"));
