@@ -27,7 +27,13 @@ function Passenger(person,seat ){
     this.person=person;
     this.seat=seat;
     this.getData=function(person,seat){
-        return this.seat.getData()+","+this.person.getData();
+        var cat="";
+        if (this.seat.category==="E"){
+           cat="economy";
+        }
+        else  cat="bussines";
+
+        return this.seat.getData()+","+this.person.getData()+','+ cat;
     }
     
 
@@ -65,7 +71,7 @@ else console.log("The maximum number of passangers is reached.")}
 
       })
        return this.date +","+this.relation+"\n"+ res;
-           
+     
        
    }
 
@@ -78,6 +84,16 @@ else console.log("The maximum number of passangers is reached.")}
 
 
    }
+
+   this.totalNumberInBussines= function(){
+   var  num=0;
+    this.listOfPassengers.forEach(function(el){
+        if(el.seat.category==="B"){
+            num+=1;
+        }
+    })
+    return  num;
+}      
 }
 
 function getingLetters(word){
@@ -119,6 +135,14 @@ this.addFlight=function(flight){
     return "Airport : "+this.name+", "+ "total passengers: "+num+"\n"+ res;
     
   }
+
+  this.totalNumberInBussinesOfAirport=function(){
+      var sum=0;
+      this.listOfFlights.forEach(function(el){
+        sum+=el.totalNumberInBussines();
+      })
+       return sum;
+  }
 }
 
 
@@ -147,19 +171,20 @@ var passanger1= createPassenger("John","Snow",1,"b");
 var passanger2= createPassenger("Cersei","Lannister",1,"b");
 var passanger3= createPassenger("Daenerys","Targaryen",14,);
 var passanger4= createPassenger("Tyrion","Lannister");
-var passanger5= createPassenger("Tanja","Ilic",25,"e");
+var passanger5= createPassenger("Tanja","Ilic",25,"b");
 
 fligth1.addPassenger(passanger1);
 fligth1.addPassenger(passanger2);
 fligth1.addPassenger(passanger3);
 fligth1.addPassenger(passanger4);
-fligth1.addPassenger(passanger5);
+fligth2.addPassenger(passanger5);
 airport.addFlight(fligth1);
 airport.addFlight(fligth2);
 console.log(fligth1);
 console.log(fligth1.listOfPassengers.length)
 // console.log(fligth1.getData2());
-// console.log(airport.getData());
-
+console.log(airport.listOfFlights);
+ console.log(fligth1.totalNumberInBussines());
+ console.log(airport.totalNumberInBussinesOfAirport());
     }
 )();
