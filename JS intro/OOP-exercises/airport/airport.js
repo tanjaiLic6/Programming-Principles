@@ -13,6 +13,8 @@ this.getData=function(){
 }
 }
 
+
+
 function Seat(number,category){
     this.number=number||Math.floor((Math.random() * (100 - 10 + 1) + 10));
     this.category=(category||"e").toUpperCase();
@@ -21,6 +23,8 @@ function Seat(number,category){
     }
 
 }
+
+
 
 function Passenger(person,seat ){
 
@@ -39,6 +43,8 @@ function Passenger(person,seat ){
 
 }
 
+
+
 function Flight(relation,date){
    this.relation=relation;
    this.date=new Date(date).toLocaleDateString();
@@ -51,8 +57,8 @@ function Flight(relation,date){
           return lis[lis.length]=el.seat.number;
 
       })
-    if (this.listOfPassengers.length<4){
-   if(this.listOfPassengers.length>=1){ 
+    if (this.listOfPassengers.length<100){
+     if(this.listOfPassengers.length>=1){ 
        if(lis.includes(passenger.seat.number)){
             console.log("The seat of "+passenger.person.name+" "+passenger.person.surname +" is already been taken! We will provide you another seat number")
             passenger.seat.number=Math.floor((Math.random() * (100 - 10 + 1) + 10));
@@ -60,10 +66,11 @@ function Flight(relation,date){
        }
        else self.listOfPassengers.push(passenger);
   
-}  else self.listOfPassengers.push(passenger);
+}     else self.listOfPassengers.push(passenger);
 
 }
-else console.log("The maximum number of passangers is reached.")}
+    else console.log("The maximum number of passangers is reached.")}
+
    this.getData=function(){
        var res="";
      var li= this.listOfPassengers.forEach(function(element,index){
@@ -96,6 +103,8 @@ else console.log("The maximum number of passangers is reached.")}
 }      
 }
 
+
+
 function getingLetters(word){
     var res="";
     var vowels=["a","e","i","o","u"];
@@ -114,6 +123,8 @@ function getingLetters(word){
     return res;
 
 }
+
+
 
 function Airport(){
 this.name="Nikola Tesla";
@@ -146,6 +157,7 @@ this.addFlight=function(flight){
 }
 
 
+
 function createFlight(relation,date){
 
     return new Flight(relation,date);
@@ -176,12 +188,12 @@ var passanger5= createPassenger("Tanja","Ilic",25,"b");
 fligth1.addPassenger(passanger1);
 fligth1.addPassenger(passanger2);
 fligth1.addPassenger(passanger3);
-fligth1.addPassenger(passanger4);
+fligth2.addPassenger(passanger4);
 fligth2.addPassenger(passanger5);
 airport.addFlight(fligth1);
 airport.addFlight(fligth2);
 console.log(fligth1);
-console.log(fligth1.listOfPassengers.length)
+// console.log(fligth1.listOfPassengers.length)
 // console.log(fligth1.getData2());
 console.log(airport.listOfFlights);
  console.log(fligth1.totalNumberInBussines());

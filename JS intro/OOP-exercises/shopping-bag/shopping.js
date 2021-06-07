@@ -7,11 +7,7 @@
      this.name=name;
      this.price=price.toFixed(2);
   
-     this.expirationDate=new Date(expirationDate).toLocaleDateString('en-us',{
-   day: '2-digit',
-   month: '2-digit',
-   year: 'numeric',
- });
+     this.expirationDate=new Date(expirationDate).toLocaleDateString('en-us');
  
      this.getInfo=function(){
          var fLetter=(this.name.slice(0,1)).toUpperCase();
@@ -29,8 +25,6 @@
  this.addProduct=function(product){
      var today=new Date().valueOf();
      var productTime=new Date(product.expirationDate).valueOf();
-    //  console.log(productTime);
-    //  console.log(today);
      if(productTime>today){
           this.productList.push(product); 
      }
@@ -68,10 +62,23 @@
  
  }
  
- function PaymentCard(balance,status,validDate){
+ function PaymentCard(balance,validDate){
      this.accountBalance=Number(balance.toFixed(2));
-     this.status=status;
-     this.validDate=new Date(validDate).toLocaleDateString('en-GB');
+     this.status=function(){
+         var validdate=new Date(validDate);
+         var today=new Date();
+         if(validdate<today){
+             return "inactive";
+         }
+         else return "active";
+    };
+     this.validDate=function(){
+         var fullDate=new Date(validDate);
+         var day=fullDate.getDate();
+         var month=fullDate.getMonth()+1;
+         var year=fullDate.getFullYear();
+         return day+"/"+month+"/"+ year;
+      }
  
  }
  
@@ -115,15 +122,15 @@
  var bag= new ShoppingBag();
  bag.addProduct(cokolada);
  bag.addProduct(vino);
- var mycard= new PaymentCard(100,"active","12/7/2021");
+ var mycard= new PaymentCard(1000,"8/7/2021");
  console.log(bag);
- console.log(mycard);
+ console.log(bag.productList);
+//  console.log(mycard.status());
+//  console.log(mycard.validDate());
  
- // bag.addProduct(vino);
-//  console.log(bag);
- console.log(bag.averagePrice(bag.productList));
- console.log(bag.mostExpensive(bag.productList));
-console.log(  bag.totalPrice(bag.productList));
+ console.log("average price "+bag.averagePrice(bag.productList));
+ console.log("most expensive "+bag.mostExpensive(bag.productList));
+ console.log("total price "+ bag.totalPrice(bag.productList));
  console.log(checkOutAndBuy(bag,mycard));
  
  }
