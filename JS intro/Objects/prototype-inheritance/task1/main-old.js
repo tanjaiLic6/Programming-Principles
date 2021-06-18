@@ -49,7 +49,7 @@ Manager.prototype=Object.create(Employee.prototype);
 Manager.prototype.constructor=Manager;
 
 Manager.prototype.getDepartment= function(){
-    return (this.department);
+    return this.department;
   }
  Manager.prototype.changeDep=function(newDep){
      this.department=newDep;

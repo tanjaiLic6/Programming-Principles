@@ -1,10 +1,40 @@
-class WebApp{
-    constructor(name,url,technologies,licence,stars){
+
+class Web{
+    constructor(name,licence,stars){
         this.name=name;
-        this.url=url;
-        this.technologies=technologies.split(",");
         this.licence=licence;
         this.stars=stars;
+    }
+
+
+    isCClicence(){
+        if(this.licence==="CC"){
+            return true;
+        }
+        else return false;
+    }
+
+     like(){
+        this.stars+=1;
+    }
+
+
+    showStars(){
+        return 'The number of stars is: '+ this.stars;
+        }
+
+}
+
+
+
+
+
+
+class WebApp extends Web{
+    constructor(name,url,technologies,licence,stars){
+        super(name,licence,stars)
+        this.url=url;
+        this.technologies=technologies.split(",");
     }
 
     getData(){
@@ -18,30 +48,15 @@ class WebApp{
         else return false;
     }
 
-    isCC(){
-        if(this.licence==="CC"){
-            return true;
-        }
-        else return false;
-    }
 
-    like(){
-        this.stars+=1;
-    }
-
-    showStars(){
-        return 'The number of stars is: '+ this.stars;
-        }
 
 }
 
 
-class MobileApp{
+class MobileApp extends Web{
     constructor(name,platforms,licence,stars){
-        this.name=name;
+        super(name,licence,stars)
         this.platforms=platforms.split(",");
-        this.licence=licence;
-        this.stars=stars;
     }
 
     getData(){
@@ -54,24 +69,11 @@ class MobileApp{
         }
         else return false;
     }
-    isCC(){
-        if(this.licence==="CC"){
-            return true;
-        }
-        else return false;
-    }
-
-    like(){
-        this.stars+=1;
-    }
-
-    showStars(){
-    return 'The number of stars is: '+ this.stars;
-    }
+   
    
 }
 
-
+var web=new Web('facebook','CC',4);
 var webApp1= new WebApp('Mondo','https://mondo.rs/','React,PHP','CC',1);
 var mobileApp= new MobileApp('Donesi','Android,IOS','KK',2);
 webApp1.like();
@@ -79,4 +81,3 @@ mobileApp.like();
 
 console.log(webApp1.showStars());
 console.log(mobileApp.forAndroid());
-console.log(mobileApp.isCC());
