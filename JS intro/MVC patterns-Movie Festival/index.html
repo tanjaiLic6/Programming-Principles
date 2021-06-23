@@ -13,7 +13,7 @@
      <main>
     <h4> Please fill in the form</h4>
      <h4>Movie</h4>
-     <form action="post">
+     <form>
          <div><label for="Title">Title</label></div>
          <input type="text" placeholder="Tilte"  id="Title">
 
@@ -22,45 +22,46 @@
 
         <div> 
            <select name="genre-option" id="genre-option">
-             <option value="">-</option>
-             <option value="">Drama</option>
-             <option value="">Comedy</option>
-             <option value="">Action</option>
-             <option value="">Thriller</option>
+             <option value="-">-</option>
+             <option value="Drama">Drama</option>
+             <option value="Comedy">Comedy</option>
+             <option value="Action">Action</option>
+             <option value="Thriller">Thriller</option>
          </select>
         </div>
-         <button id="btn-crateMovie">Create movie</button>
-         <p></p>
-         <ul></ul>
+         <button type="button" id="btn-crateMovie">Create movie</button>
+         <p id="ErrorMsgMovie"></p>
+         <ul id="listOfMovies"></ul>
      </form>
 
 
      <h4>Program</h4>
 
-     <form action="" method="post">
+     <form>
         <div><label for="Date">Date</label></div>
-        <div><input type="date"></div>
-        <button id="btn-createProgram">Create program</button>
+        <div><input type="date" id="dateInput" placeholder="15/06/2021" value=""></div>
+        <button type="button" id="btn-createProgram">Create program</button>
         <p></p>
-        <ul></ul>
+        <ul id="listOfPrograms"></ul>
          
         <hr>
 
         <div><label for="Movie">Movie</label></div>
-        <div><select name="movie" id="move-select">
-             <option value="">-</option>
+        <div><select name="movie" id="movie-select">
+             <option value="-">-</option>
         </select></div>
 
         <div><label for="Program">Program</label></div>
         <div><select name="Program" id="program-select">
              <option value="">-</option>
         </select></div>
-        <button id="btn-addMovieToProgram">Add movie to program</button>
+        <button type="button" id="btn-addMovieToProgram">Add movie to program</button>
      </form>
 
     </main>
     
-    <script src="/entities.js"></script>
-    <script src="/form.js"></script>
+    <script src="./JS/entities.js"></script>
+    <script src="./JS/form.js"></script>
+    
 </body>
 </html>
