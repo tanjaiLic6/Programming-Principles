@@ -27,11 +27,7 @@ function Program(date){
   
 }
 
-// Program.prototype.getDuration=function(){
-//   this.movie.forEach(function(el){
-//     var res;
-//     return res += el.length;
-// })}
+
 
 Program.prototype.getFullDate=function(){
   var day=this.date.getDate();
@@ -44,12 +40,17 @@ Program.prototype.getFullDate=function(){
 }
 
 Program.prototype.movieDuration=function(){
+  var res=0;
   if(this.movies.length!=0){ 
-  this.movie.forEach(function(el){
-    var res;
-     res += el.length;
-     return this.movies.length+'movies ,'+'duration'+ res;
-})}
+  this.movies.forEach(function(el){
+     
+    res =res+ el.length;
+    return res;
+     
+})
+return this.movies.length+'movies ,'+'duration: '+ res+' min';
+}
+
 else return "No movies yet!"
 }
 
