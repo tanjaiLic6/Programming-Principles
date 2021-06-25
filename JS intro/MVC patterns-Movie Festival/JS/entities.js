@@ -61,6 +61,7 @@ Program.prototype.programInfo = function(){
 
 
 Program.prototype.pushMovie=function(movie){
-  this.movies.push(movie);
+  if(movie instanceof Movie ) { 
+  this.movies.push(movie);}
 }
 

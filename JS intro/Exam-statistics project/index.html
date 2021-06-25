@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main> 
+    <header> 
+      <div class="div-center">
+        <h3>Exam statistic June</h3>
+        <h4>Total students: <span></span></h4>
+        <div class="pas mark" >
+            <div>Passed</div>
+            <div>
+            <span>2</span>
+            <span>4</span>
+            </div>
+        </div>
+        <div class="fail mark">
+            <div>Failed</div>
+            <div>
+            <span>4</span>
+            <span>4</span>
+            </div>
+        </div>
+
+      </div>  
+      </header>
+      <section class="adding">
+          <div><select name='subjects' id="subjects">
+              <option value="-">Subject</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="C++">C++</option>
+            <option value="Java">Java</option>
+         </select></div>
+
+          <div><input type="text" id="name-surname" placeholder="name and surname"></div>
+          <div><select name="grade" id="grade">
+              <option value="-">Grade</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+
+          </select></div>
+          <div><button type="button" id="btn-grade">ADD</button></div>
+      </section>
+     
+       <section class="table">
+           <div>
+               <p>Passed</p>
+                <ul> </ul>
+           </div>
+           <div>
+               <p>Failed</p>
+                <ul></ul>
+           </div>
+       </section>
+    
+    
+ 
+
+
+    </main>
+    
+
+    <script src="./JS/exam.js"></script>
+    <script src="./JS/student.js"></script>
+    <script src="./JS/subject.js"></script>
+    <script src="./JS/app.js"></script>
+    <script src="./JS/form.js"></script>
+</body>
+</html>

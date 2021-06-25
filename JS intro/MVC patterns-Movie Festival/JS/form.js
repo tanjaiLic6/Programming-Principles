@@ -73,10 +73,14 @@ var festival1=new Festival();
         var d=new Date(date);
         var today=new Date();
 
-        if(d>today){ 
+        if(d>today&&festival1.listOfPrograms.some(function(program){
+            return d.getTime() === program.date.getTime();
+        })===false){ 
 
         var program=new Program(date);
         // push to festival list
+       
+       
         festival1.listOfPrograms.push(program);
 
         var li=document.createElement('li');
@@ -98,8 +102,8 @@ var festival1=new Festival();
         else {
           errorDateMsg.innerText="Please select valid date!"
         }
- 
-    }
+      }
+    
 
 
     function addMovieToProgram(){
