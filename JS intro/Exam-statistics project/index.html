@@ -16,31 +16,38 @@
         <div class="pas mark" >
             <div>Passed</div>
             <div>
-            <span>2</span>
-            <span>4</span>
+            <span class="numPassedStudents"></span>
+            <span class="percentPassed"></span>
             </div>
         </div>
         <div class="fail mark">
             <div>Failed</div>
             <div>
-            <span>4</span>
-            <span>4</span>
+            <span class="numFailedStudents"></span>
+            <span class="percentFailed"></span>
             </div>
         </div>
 
       </div>  
       </header>
-      <section class="adding">
-          <div><select name='subjects' id="subjects">
-              <option value="-">Subject</option>
+       <section>
+      <form class="adding">
+          <div>
+            <select name='subjects' id="subjects">
+            <option value="-">Subject</option>
             <option value="JavaScript">JavaScript</option>
             <option value="PHP">PHP</option>
             <option value="C++">C++</option>
             <option value="Java">Java</option>
-         </select></div>
+        
+            </select>
+           </div>
 
-          <div><input type="text" id="name-surname" placeholder="name and surname"></div>
-          <div><select name="grade" id="grade">
+          <div>
+              <input type="text" id="nameSurname" placeholder="Name and Surname">
+            </div>
+          <div>
+              <select name="grade" id="grade">
               <option value="-">Grade</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -54,17 +61,20 @@
               <option value="10">10</option>
 
           </select></div>
-          <div><button type="button" id="btn-grade">ADD</button></div>
-      </section>
+          <div><button type="button" id="btnGrade">ADD</button></div>
+      
+      </form> 
+        <p id="errorMsg"></p>
+       </section>
      
        <section class="table">
            <div>
                <p>Passed</p>
-                <ul> </ul>
+                <ul class="passedStudents"> </ul>
            </div>
            <div>
                <p>Failed</p>
-                <ul></ul>
+                <ul class="failedStudents"></ul>
            </div>
        </section>
     
@@ -74,11 +84,12 @@
 
     </main>
     
-
+    <script src="./JS/college.js"></script>
     <script src="./JS/exam.js"></script>
     <script src="./JS/student.js"></script>
     <script src="./JS/subject.js"></script>
     <script src="./JS/app.js"></script>
     <script src="./JS/form.js"></script>
+    
 </body>
 </html>

@@ -57,6 +57,26 @@ h4{
    
 }
 
+#btnGrade{
+    background-color:rgb(241 240 240); 
+    font-size: 25px;
+    color: #45ac9c;
+    border: none;
+    cursor: pointer;
+}
+
+#subjects{
+    padding: 0.2em;
+}
+
+#nameSurname{
+    padding: 0.2em;
+}
+
+#grade{
+    padding: 0.2em;
+}
+
 .table{
     display: flex;
     justify-content: center;

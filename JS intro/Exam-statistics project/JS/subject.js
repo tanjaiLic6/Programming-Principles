@@ -3,6 +3,7 @@ function Subject(name){
 }
 
 Subject.prototype.getSubjectName=function(){
+  
    return this.name;
    
   }
