@@ -5,7 +5,7 @@
 var Vreme = 1;
 var vreme = 3;
 var $novac = 25;
-var 4dana = 4;//not correct
+// var 4dana = 4;//not correct
 
 //  2. Save a string (text) describing your current mood in a variable and print it out in console.
 var feeling="osecam se odlicno danas";

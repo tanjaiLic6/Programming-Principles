@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Movie Festival</h1>
+     <main>
+    <h4> Please fill in the form</h4>
+     <h4>Movie</h4>
+     <form>
+         <div><label for="Title">Title</label></div>
+         <input type="text" placeholder="Tilte"  id="Title">
+
+         <div><label for="Length">Length</label></div>
+         <input type="text" placeholder="Length" id="Length">
+
+        <div> 
+           <select name="genre-option" id="genre-option">
+             <option value="-">-</option>
+             <option value="Drama">Drama</option>
+             <option value="Comedy">Comedy</option>
+             <option value="Action">Action</option>
+             <option value="Thriller">Thriller</option>
+         </select>
+        </div>
+         <button type="button" id="btn-crateMovie">Create movie</button>
+         <p id="ErrorMsgMovie"></p>
+         <ul id="listOfMovies"></ul>
+     </form>
+
+
+     <h4>Program</h4>
+
+     <form>
+        <div><label for="Date">Date</label></div>
+        <div><input type="date" id="dateInput" placeholder="15/06/2021" value=""></div>
+        <button type="button" id="btn-createProgram">Create program</button>
+        <p id="errorDate"></p>
+        <ul id="listOfPrograms"></ul>
+         
+        <hr>
+
+        <div><label for="Movie">Movie</label></div>
+        <div><select name="movie" id="movie-select">
+             <option value="-">-</option>
+        </select></div>
+
+        <div><label for="Program">Program</label></div>
+        <div><select name="Program" id="program-select">
+             <option value="">-</option>
+        </select></div>
+        <button type="button" id="btn-addMovieToProgram">Add movie to program</button>
+     </form>
+
+    </main>
+    
+    <script src="./JS/entities.js"></script>
+    <script src="./JS/form.js"></script>
+    
+</body>
+</html>
