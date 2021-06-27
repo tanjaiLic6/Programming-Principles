@@ -16,21 +16,25 @@ function validateData(data,college){
     var choosenSubject=data[0];
     var choosenGrade=data[2];
 
-  
+    
     if(choosenSubject==='-'){
-      return   errorMsg.textContent='Please choose one subject!';
+      errorMsg.textContent='Please choose one subject!';
+      return false  
     } 
     
      if(studentData.value===''){
-     return errorMsg.textContent='Please enter students name and surname';
+      errorMsg.textContent='Please enter students name and surname';
+     return false 
     }
 
      if( listOfNameAndSurname[1]===undefined){
-       return errorMsg.textContent='Please enter both students  name and surname';
+        errorMsg.textContent='Please enter both students  name and surname';
+        return false 
     }
 
      if(choosenGrade==='-'){
-      return  errorMsg.textContent='Please choose one grade!';
+      errorMsg.textContent='Please choose one grade!';
+      return false 
     } 
 
     else {
@@ -38,6 +42,8 @@ function validateData(data,college){
         var subject= new Subject(choosenSubject)
         var exam=new Exam(student,subject,choosenGrade);
         college.listOfExams.push(exam);
+        errorMsg.textContent='';
+        return true
     }
 
 

@@ -20,8 +20,11 @@ var college= new College();
 var addStudent= function(){
     var data=collectData();
     var isvalid=validateData(data,college);
-    updatingStudentList(college);
-    updateStatistics(college);
+    if(isvalid){ 
+        updatingStudentList(college);
+        updateStatistics(college);
+    }
+    
 }
 
 
