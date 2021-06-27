@@ -2,6 +2,7 @@ var numberOfPassedStudents = document.querySelector('.numPassedStudents');
 var numberOfFailedStudents = document.querySelector('.numFailedStudents');
 var percentPassed = document.querySelector('.percentPassed');
 var percentFailed = document.querySelector('.percentFailed');
+var totalStudents=document.querySelector('.total');
 // SECOND PART
 var subjectName = document.querySelector('#subjects');
 var studentData = document.querySelector('#nameSurname');

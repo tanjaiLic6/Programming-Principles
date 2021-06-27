@@ -88,16 +88,41 @@ function updatingStudentList(college){
 function updateStatistics(college){
 var passed=0;
 var failed=0;
+var total=0;
+
 college.listOfExams.forEach(function(el){
   if(el.hasPassed()){
     passed+=1;
     numberOfPassedStudents.textContent=passed;
+  
   }
    else {
        failed+=1;
        numberOfFailedStudents.textContent=failed;
+      
    }
 })
+ 
+
+total=passed+failed;
+totalStudents.textContent=total;
+
+if(passed===0){
+  percentPassed.textContent='';
+}
+else{
+  percentPassed.textContent=Math.round((passed/total)*100)+'%';
+}
+
+if(failed===0){
+  percentFailed.textContent=''
+}
+
+else{
+  percentFailed.textContent=Math.round((failed/total)*100)+"%";
+}
+
+
 
 
 }
