@@ -6,6 +6,7 @@
 //   let array=['hello', 'there', 'ES',6];
 
    let capitalize =(...arr)=>{ 
+       console.log(arr)
        return arr 
        .filter(item=> typeof item==='string')
        .map (item=>item[0].toUpperCase()+item.slice(1))
